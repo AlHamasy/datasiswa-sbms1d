@@ -7,7 +7,7 @@ include 'koneksi.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit Data</title>
+	<title>List Data</title>
 </head>
 <body>
 
@@ -28,17 +28,31 @@ include 'koneksi.php';
 			$query -> execute();
 			
 
-			while ($row = $query->fetchObject()) {
+// 			while ($row = $query->fetchObject()) {
 				
- 				echo "<tr>";
- 				echo "<td>".$row->nim."</td>";
- 				echo "<td>".$row->nama."</td>";
-				echo "<td>".($row->jenkel == "L" ? "Laki-laki" : "Perempuan")."</td>";
- 				echo "<td><a href='delete.php?nim=".$row['nim']."'>delete</a></td>";
- 				echo "<td><a href='update.php?nim=".$row['nim']."'>update</a></td>";
- 				echo "<tr>";
+//  				echo "<tr>";
+//  				echo "<td>".$row->nim."</td>";
+//  				echo "<td>".$row->nama."</td>";
+// 				echo "<td>".($row->jenkel == "L" ? "Laki-laki" : "Perempuan")."</td>";
+//  				echo "<td><a href='delete.php?nim=".$row['nim']."'>delete</a></td>";
+//  				echo "<td><a href='update.php?nim=".$row['nim']."'>update</a></td>";
+//  				echo "<tr>";
 			
- 			}
+//  			}
+		
+			while($data =  $query->fetchObject()){
+        
+			    <tr>
+				<td><?php echo $data->nim ?></td>
+				<td><?php echo $data->nama ?></td>
+				<td><?php echo $data->jenkel ?></td>
+				<td>
+				    <a href="index.php?aksi=update&nim=<?php echo $data->nim ?>&nama=<?php echo $data->nama ?>&jenisKelamin=<?php echo $data->jenisKelamin ?>&alamat=<?php echo $data->alamat ?>&hobi=<?php echo $data->hobi ?>">Ubah</a> |
+				    <a href="index.php?aksi=delete&nim=<?php echo $data->nim ?>">Hapus</a>
+				</td>
+			    </tr>
+        
+    			}
 
 		 ?>
 
