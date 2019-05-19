@@ -29,7 +29,7 @@ include 'koneksi.php';
 		
 			$row = $query->fetchObject()
 		
-			var_dump($row);
+			var_dump($row->nim);
 			
 
 // 			while ($row = $query->fetchObject()) {
