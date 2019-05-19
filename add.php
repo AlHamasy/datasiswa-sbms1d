@@ -35,12 +35,13 @@ if(isset($_POST['submit'])){
 	$nama = $_POST['nama'];
 	$jenkel = $_POST['jenkel'];
 
-	$query = "INSERT INTO mhs (nim, nama, jenkel)";
-	$query .= "values ('$nim','$nama','$jenkel')";
+	$sql = "INSERT INTO datasiswa (nim, nama, jenkel)";
+	$sql .= "values ('$nim','$nama','$jenkel')";
+	
+	$query = $conn->prepare($sql);
+        $query -> execute();
 
-	$exec = mysqli_query($conn, $query);
-
-	if($exec){
+	if($query){
 		echo "Data berhasil ditambahkan";
 	}
 	else{
