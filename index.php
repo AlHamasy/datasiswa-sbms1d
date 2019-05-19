@@ -27,9 +27,7 @@ include 'koneksi.php';
 			$query = $conn->prepare("SELECT * FROM datasiswa");
 			$query -> execute();
 		
-			$row = $query->fetchObject()
-		
-			var_dump($row->nim);
+			$row = $query->fetchObject();
 			
  			while ($row = $query->fetchObject()) {
 				
