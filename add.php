@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
         $query -> execute();
 
 	if($query){
-		echo "Data berhasil ditambahkan";
+		header('location: index.php');
 	}
 	else{
 		echo "Gagal menambahkan data";
