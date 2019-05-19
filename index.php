@@ -18,8 +18,6 @@ include 'koneksi.php';
 			<td><b>NIM</b></td>
 			<td><b>Nama</b></td>
 			<td><b>Jenis Kelamin</b></td>
-			<td><b>Delete</b></td>
-			<td><b>Update</b></td>
 		</tr>
 
 		<?php 
