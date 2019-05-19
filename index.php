@@ -35,15 +35,10 @@ include 'koneksi.php';
   				echo "<td>".$row->nim."</td>";
   				echo "<td>".$row->nama."</td>";
  				echo "<td>".($row->jenkel == "L" ? "Laki-laki" : "Perempuan")."</td>";
-  				echo "<td><a href='delete.php?nim=".$row->nim."'>delete</a></td>";
-  				echo "<td><a href='update.php?nim=".$row->nim."'>update</a></td>";
   				echo "<tr>";
 			
   			}
-
-
 		 ?>
-
 	</table>
 
 	<br>
