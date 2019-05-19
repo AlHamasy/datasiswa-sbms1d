@@ -1,17 +1,15 @@
 <?php 
 
-$host = "localhost";
-$user = "root";
-$pass = "root";
-$dbnm = "pweb";
+$host = "serverasad.database.windows.net";
+$user = "asad";
+$pass = "Dasa1997";
+$dbnm = "datasiswa";
 
-$conn = mysqli_connect($host,$user,$pass,$dbnm);
-
-if ($conn) {
-	//echo "Database terhubung";
-}
-else{
-	die("Server MySQL tidak terhubung");
-}
+try {
+        $conn = new PDO("sqlsrv:server = $host; Database = $dbnm", $user, $pass);
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    } catch(Exception $e) {
+        echo "Failed: " . $e;
+    }
 
  ?>
