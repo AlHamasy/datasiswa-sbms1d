@@ -25,9 +25,10 @@ include 'koneksi.php';
 		<?php 
 
 			$query = "SELECT * FROM mhs";
-			$exec = mysqli_query($conn, $query);
+			$query -> execute();
+			
 
-			while ($row = mysqli_fetch_array($exec)) {
+			while ($row = $query->fetchObject()) {
 				
 				echo "<tr>";
 				echo "<td>".$row['nim']."</td>";
