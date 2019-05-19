@@ -24,7 +24,7 @@ include 'koneksi.php';
 
 		<?php 
 
-			$query = $conn->prepare("SELECT * FROM mahasiswa");
+			$query = $conn->prepare("SELECT * FROM db_siswa");
 			$query -> execute();
 			
 
