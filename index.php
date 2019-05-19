@@ -24,25 +24,24 @@ include 'koneksi.php';
 
 		<?php 
 
-			$query = $conn->prepare("SELECT * FROM db_siswa");
+			$query = $conn->prepare("SELECT * FROM datasiswa");
 			$query -> execute();
 		
 			$row = $query->fetchObject()
 		
 			var_dump($row->nim);
 			
-
-// 			while ($row = $query->fetchObject()) {
+ 			while ($row = $query->fetchObject()) {
 				
-//  				echo "<tr>";
-//  				echo "<td>".$row->nim."</td>";
-//  				echo "<td>".$row->nama."</td>";
-// 				echo "<td>".($row->jenkel == "L" ? "Laki-laki" : "Perempuan")."</td>";
-//  				echo "<td><a href='delete.php?nim=".$row['nim']."'>delete</a></td>";
-//  				echo "<td><a href='update.php?nim=".$row['nim']."'>update</a></td>";
-//  				echo "<tr>";
+  				echo "<tr>";
+  				echo "<td>".$row->nim."</td>";
+  				echo "<td>".$row->nama."</td>";
+ 				echo "<td>".($row->jenkel == "L" ? "Laki-laki" : "Perempuan")."</td>";
+  				echo "<td><a href='delete.php?nim=".$row['nim']."'>delete</a></td>";
+  				echo "<td><a href='update.php?nim=".$row['nim']."'>update</a></td>";
+  				echo "<tr>";
 			
-//  			}
+  			}
 
 
 		 ?>
